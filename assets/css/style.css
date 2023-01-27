@@ -162,7 +162,6 @@
   }
   .demo-updates .mdl-card__title {
     min-height: 200px;
-    /* background-image: url('images/dog.png'); */
     background-position: 90% 100%;
     background-repeat: no-repeat;
   }
@@ -205,6 +204,15 @@
     justify-content: center;
   }
 
-  .movie-container{
+  .movie-container div button,
+  .movie-container div img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  a{
     font-size: 150%;
   }
