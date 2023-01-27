@@ -204,7 +204,6 @@
     justify-content: center;
   }
 
-  .movie-container div button,
   .movie-container div img{
     display: flex;
     flex-direction: column;
@@ -216,3 +215,59 @@
   a{
     font-size: 150%;
   }
+
+ .nav-left-button{
+  margin: auto;
+ }
+
+ .youtube-container div a {
+  font-size: 90%;
+ }
+
+ .movieResults{
+  margin: 20px 0px 20px 0px;
+  border: 1px solid black;
+  padding: 10px;
+ }
+
+ .movieResults button{
+  margin: 10px auto 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+ }
+
+ .movieResults button:hover{
+  cursor:grab;
+ }
+
+ .youtubeResults {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+ }
+
+ #home-button, #display-favorites{
+  background: rgb(58,71,78);
+ }
+
+ .fave-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid black;
+  margin: 10px auto 10px auto;
+  padding: 10px;
+  justify-content: space-between;
+ }
+
+ .fave-container button{
+  border-radius: 10px;
+ }
+
+ .fave-container button:hover{
+  cursor: grab;
+ }

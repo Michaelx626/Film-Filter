@@ -6,19 +6,17 @@ var youtubeHTTP = "https://www.youtube.com/watch?v=";
 var movieTitle = document.getElementById("movie-title");
 var movieYears = document.getElementById("movie-year");
 var homeButton = document.getElementById('home-button');
+var movieResults = document.querySelector('.movieResults')
+var youtubeResults = document.querySelector('.youtubeResults')
 var movieSection = document.querySelector(".movie-container");
-var storageArray = JSON.parse(localStorage.getItem('movies')) || [];
+var youtubeSection = document.querySelector(".youtube-container");
+var deleteBtn = document.getElementById('delete');
+var displayFavorites = document.getElementById('display-favorites');
+var userStored = getItem() || [];
 
 function runProgram() {
   var userInput = userSearch.value.trim();
   var currentUrl = "http://www.omdbapi.com/?s=" + userInput + "&apikey=" + APIKey;
-  
-  // add a modal => inject the frame of the youtube video
-  // give the div an id for the movie containers
-  // trigger the modal dialog => add in the content will be dynamic => make the call to youtube with the youtube ID (after)
-  // extract the youtube title and append it to URL
-  // iFrame => source => youtube http + videoID
-
   fetch(currentUrl)
     .then(function (response) {
       return response.json();
@@ -29,6 +27,7 @@ function runProgram() {
       var titles = [];
       var years = [];
       var poster = [];
+      movieSection.innerHTML = " ";
       for (var i = 0; i < movies.length; i++) {
         var filteredTitles = movies[i].Title;
         var filteredYears = movies[i].Year;
@@ -36,16 +35,19 @@ function runProgram() {
         titles.push(filteredTitles);
         years.push(filteredYears);
         poster.push(filteredPoster);
-        // localStorage.setItem('movies', JSON.stringify(titles));
         var movieContainer = document.createElement("div");
         var createTitle = document.createElement("a");
         var createYear = document.createElement("h4");
         var createPoster = document.createElement("img");
         var favoriteButton = document.createElement('button');
+        movieContainer.setAttribute('class', 'movieResults');
         favoriteButton.setAttribute('type', 'submit');
         favoriteButton.textContent = "Add to Favorites";
-        favoriteButton.addEventListener('click', function(){
-          alert('hi');
+        favoriteButton.setAttribute('data-attribute', titles[i])
+        favoriteButton.addEventListener('click', function(event){
+          var addFavorite = event.target.getAttribute('data-attribute');
+          userStored.push(addFavorite);
+          setItem()
         })
         if (poster[i] !== "N/A"){
           createPoster.setAttribute("src", poster[i]);
@@ -54,20 +56,7 @@ function runProgram() {
         }
         createTitle.setAttribute("href", "#");
         createTitle.setAttribute("data-attribute", titles[i]);
-        createTitle.addEventListener("click", function (event) {
-          var userSelection = event.target.getAttribute("data-attribute");
-          var updatedSelection = userSelection.replaceAll(' ', '%20');
-          var youtubeUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=rating&q=" + updatedSelection + "%20official%20trailer&type=video&key=" + youtubeKey;
-          fetch(youtubeUrl)
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              console.log(data);
-                // collect the videoIDs
-            });
-          console.log(youtubeUrl);
-        });
+        createTitle.addEventListener("click", callYoutube);
         createTitle.innerHTML = titles[i];
         createYear.innerHTML = years[i];
         movieContainer.append(createTitle, createYear, createPoster, favoriteButton);
@@ -76,9 +65,86 @@ function runProgram() {
     });
 }
 
+function callYoutube (event) {
+  youtubeSection.innerHTML = " ";
+  var userSelection = event.target.getAttribute("data-attribute");
+  var updatedSelection = userSelection.replaceAll(' ', '%20');
+  var youtubeUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=rating&q=" + updatedSelection + "%20official%20trailer&type=video&key=" + youtubeKey;
+  fetch(youtubeUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var videoIDs = data.items
+      var youtubeIDs = [];
+      var youtubeResultsTitle = [];
+      for (var j = 0; j < videoIDs.length; j++){
+        var filteredIDs = videoIDs[j].id.videoId;
+        var filteredyoutubeTitles = videoIDs[j].snippet.title;
+        youtubeIDs.push(youtubeHTTP + filteredIDs);
+        youtubeResultsTitle.push(filteredyoutubeTitles);
+        var youtubeContainer = document.createElement('div');
+        var youtubeTitle = document.createElement('h5');
+        var youtubeLink = document.createElement('a');
+        youtubeContainer.setAttribute('class', 'youtubeResults')
+        youtubeLink.setAttribute('href', youtubeIDs[j]);
+        youtubeLink.setAttribute('target', '_blank');
+        youtubeTitle.innerHTML = youtubeResultsTitle[j];
+        youtubeLink.innerHTML = youtubeIDs[j];
+        youtubeContainer.append(youtubeTitle, youtubeLink)
+        youtubeSection.appendChild(youtubeContainer);
+      }
+
+    })
+  }    
+
 function refreshPage(){
   location.reload();
 }
 
+function getItem(){
+  JSON.parse(localStorage.getItem('movies'));
+}
+
+function setItem(){
+  localStorage.setItem('movies', JSON.stringify(userStored));
+}
+// create 2 separate function calls for getItem and setItem
+// splice the title out of the userStored
+// once the new result without the splice => pass that to the new localStorages
+
+function displayFaves(event){
+  event.preventDefault();
+  movieSection.innerHTML = " ";
+  for (var k = 0; k < userStored.length; k++){
+    var favoriteTitle = document.createElement('a');
+    var deleteButton = document.createElement('button');
+    var favoriteContainer = document.createElement('div');
+    favoriteTitle.setAttribute('data-attribute', userStored[k]);
+    favoriteTitle.setAttribute('href', '#');
+    favoriteTitle.addEventListener('click', callYoutube);
+    deleteButton.setAttribute('id', 'delete');
+    deleteButton.setAttribute('data-movie-title', userStored[k]);
+    deleteButton.addEventListener('click', removeFavorites);
+    favoriteContainer.setAttribute('class', 'fave-container')
+    deleteButton.setAttribute('type', 'submit');
+    deleteButton.textContent = "Delete";
+    favoriteTitle.innerHTML = userStored[k];
+    favoriteContainer.append(favoriteTitle, deleteButton);
+    movieSection.appendChild(favoriteContainer);
+  }
+}
+
+function removeFavorites(event){
+  var movieTitle = event.target.getAttribute('data-movie-title');
+  var indexToRemove = userStored.indexOf(movieTitle);
+  userStored.splice(indexToRemove, 1);
+  var updatedStorage = getItem();
+  storageArray.push(updatedStorage);
+  displayFaves(event);
+}
+
 searchButton.addEventListener("click", runProgram);
 homeButton.addEventListener('click', refreshPage);
+displayFavorites.addEventListener('click', displayFaves);
