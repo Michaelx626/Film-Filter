@@ -15,14 +15,12 @@
   .demo-drawer {
     border: none;
   }
-  /* iOS Safari specific workaround */
   .demo-drawer .mdl-menu__container {
     z-index: -1;
   }
   .demo-drawer .demo-navigation {
     z-index: -2;
   }
-  /* END iOS Safari specific workaround */
   .demo-drawer .mdl-menu .mdl-menu__item {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -76,20 +74,19 @@
         -ms-flex-align: stretch;
             align-items: stretch;
   }
-  /* TODO: Find a proper solution to have the graphs
-   * not float around outside their container in IE10/11.
-   * Using a browserhacks.com solution for now.
-   */
+
   _:-ms-input-placeholder, :root .demo-graphs {
     min-height: 664px;
   }
+
   _:-ms-input-placeholder, :root .demo-graph {
     max-height: 300px;
   }
-  /* TODO end */
+
   .demo-graph:nth-child(1) {
     color: #00b9d8;
   }
+
   .demo-graph:nth-child(2) {
     color: #d9006e;
   }
@@ -167,8 +164,10 @@
 
  .header-content{
   margin: auto;
-  /* display: flex;
+ }
+
+ footer{
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  align-items: center;
  }
