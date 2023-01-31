@@ -9,7 +9,7 @@ A site that filters movies by title, ratings, etc. and shows trailers from Youtu
 <p align="center"> You can access my project, Film Filter, by simply clicking on this highlighted text. </p>
 <p align="center"> <a href="https://michaelx626.github.io/Film-Filter/assets/index.html" target="_blank"> Here </a> </p>
 <h2 align="center"> Screenshots </h2>
-![text](https://github.com/Michaelx626/Film-Filter/blob/feature/initial-commits/assets/screenshots/Screen%20Shot%202023-01-30%20at%208.20.55%20PM.png)
+![text](https://github.com/falloutrena/Film-Filter/blob/main/assets/screenshots/Screen%20Shot%202023-01-30%20at%208.20.55%20PM.png)
 <h2 align="center">  Credit </h2>
 <p align="center"> <a href="https://developers.google.com/youtube/v3/getting-started" target="_blank"> YouTube API </a> </p>
 <p align="center"> <a href="https://www.omdbapi.com/" target="_blank"> OMDB API </a> </p>
