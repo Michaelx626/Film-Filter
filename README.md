@@ -1,5 +1,3 @@
-# Film-Filter
-A site that filters movies by title, ratings, etc. and shows trailers from Youtube for the user.
 <h1 align="center"> Film Filter </h1>
 <h2 align="center"> Project Description </h2>
 <p align="center"> This project will help users search for his or her movies based on their inputs. The movie data will be retrieved from OMDB Api displaying the title name, year of the movie, and an picture of the movie. If the user chooses to click on the title name then a top 5 list of official trailers taken from YouTube will be displayed on the side. The YouTube data will be consist of the movie title trailer and an actual URL link to that video on a separate open tab. The user is also allowed to save his or her favorite movies. They will be displayed on the favorites button to the left and the user is allowed to delete the favorites whenever he or she pleases. This project helped my colleagues and I understand the importance about server APIs and how it can fetch specific data that we need to display to the user to provide a better experience. </p>
