@@ -12,7 +12,7 @@
 
 <h2 align="center"> Screenshots </h2>
 
-![text](TBA..)
+![text](https://github.com/Michaelx626/Film-Filter/blob/feature/initial-commits/assets/screenshots/Screen%20Shot%202023-01-30%20at%208.20.55%20PM.png)
 
 <h2 align="center">  Credit </h2>
 <p align="center"> <a href="https://developers.google.com/youtube/v3/getting-started" target="_blank"> YouTube API </a> </p>

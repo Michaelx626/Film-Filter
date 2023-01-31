@@ -14,9 +14,10 @@ var deleteBtn = document.getElementById('delete');
 var displayFavorites = document.getElementById('display-favorites');
 var userStored = JSON.parse(localStorage.getItem('movies')) || [];
 
-function runProgram() {
+function runProgram(event) {
+  event.preventDefault();
   var userInput = userSearch.value.trim();
-  var currentUrl = "http://www.omdbapi.com/?s=" + userInput + "&apikey=" + APIKey;
+  var currentUrl = "https://www.omdbapi.com/?s=" + userInput + "&apikey=" + APIKey;
   fetch(currentUrl)
   .then(function (response) {
     return response.json();
