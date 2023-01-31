@@ -15,7 +15,9 @@
 ![text](TBA..)
 
 <h2 align="center">  Credit </h2>
-<p align="center"> N/A
+<p align="center"> <a href="https://developers.google.com/youtube/v3/getting-started" target="_blank"> YouTube API </a> </p>
+<p align="center"> <a href="https://www.omdbapi.com/" target="_blank"> OMDB API </a> </p>
+<p align="center"> <a href="https://getmdl.io/components/index.html#cards-section" target="_blank"> Material Design Lite </a> </p>
 
 <h2 align="center"> Licenses </h2>
 <p align="center"> Copyright (c) 2023 Michael Lin, Tyler Gosley, and Regan Wilson </p>

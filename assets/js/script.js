@@ -60,6 +60,7 @@ function fetchMovieData(data){
       
     favoriteButton.setAttribute('type', 'submit');
     movieContainer.setAttribute('class', 'movieResults');
+    movieContainer.setAttribute('style', 'background-color: white')
     favoriteButton.setAttribute('data-attribute', titles[i]);
     createTitle.setAttribute("href", "#");
     createTitle.setAttribute("data-attribute", titles[i]);
@@ -97,12 +98,12 @@ function fetchYouTubeData(data){
     
     youtubeIDs.push(youtubeHTTP + filteredIDs);
     youtubeResultsTitle.push(filteredyoutubeTitles);
-    
+
     youtubeContainer.setAttribute('class', 'youtubeResults');
+    youtubeContainer.setAttribute('style', 'background-color:white');
     youtubeLink.setAttribute('href', youtubeIDs[j]);
     youtubeLink.setAttribute('target', '_blank');
   
-
     youtubeTitle.innerHTML = youtubeResultsTitle[j];
     youtubeLink.innerHTML = youtubeIDs[j];
   
@@ -125,6 +126,7 @@ function displayFaves(event){
     deleteButton.setAttribute('data-movie-title', userStored[k]);
     deleteButton.setAttribute('type', 'submit');
     favoriteContainer.setAttribute('class', 'fave-container');
+    favoriteContainer.setAttribute('style', 'background-color:white');
       
     favoriteTitle.addEventListener('click', callYoutube);
     deleteButton.addEventListener('click', removeFavorites);
