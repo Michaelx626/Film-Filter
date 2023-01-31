@@ -1,0 +1,211 @@
+html,
+body {
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
+
+.demo-layout .mdl-layout__header {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mdl-layout__drawer {
+  margin-bottom: 16px;
+}
+
+.demo-drawer {
+  border: none;
+}
+
+.demo-drawer .mdl-menu__container {
+  z-index: -1;
+}
+
+.demo-drawer .demo-navigation {
+  z-index: -2;
+}
+
+.demo-drawer .mdl-menu .mdl-menu__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.demo-navigation {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.demo-layout .demo-navigation .mdl-navigation__link {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+}
+
+.demo-layout .demo-navigation .mdl-navigation__link:hover {
+  background-color: #00bcd4;
+  color: #37474f;
+}
+
+.demo-navigation .mdl-navigation__link .material-icons {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.56);
+  margin-right: 32px;
+}
+
+.demo-graphs {
+  padding: 16px 32px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+_:-ms-input-placeholder,
+:root .demo-graphs {
+  min-height: 664px;
+}
+
+_:-ms-input-placeholder,
+:root .demo-graph {
+  max-height: 300px;
+}
+
+.movie-container,
+a,
+h4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-container div img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+a {
+  font-size: 150%;
+}
+
+.youtube-container div a {
+  font-size: 90%;
+}
+
+.movieResults {
+  margin: 20px 0px 20px 0px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.movieResults button {
+  margin: 10px auto 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.movieResults button:hover {
+  cursor: grab;
+}
+
+.youtubeResults {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+}
+
+#home-button,
+#display-favorites {
+  background: rgb(58, 71, 78);
+}
+
+.fave-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid black;
+  margin: 10px auto 10px auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.fave-container button {
+  border-radius: 10px;
+}
+
+.fave-container button:hover {
+  cursor: grab;
+}
+
+.header-content {
+  margin: auto;
+}
+
+.header-background, footer{
+  background-color: rgb(227, 184, 122);
+}
+
+.background-content {
+  background-color: lightblue;
+}
+
+.background-container {
+  background: rgb(58, 71, 78);
+}
+
+.title-size {
+  font-size: 250%;
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#search-button {
+  padding: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#search-button:hover {
+  cursor: grab;
+}
+
+.search-text {
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  min-height: 15%;
+}

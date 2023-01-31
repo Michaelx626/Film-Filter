@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Film Filter</title>
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <style>
+            #view-source {
+                position: fixed;
+                display: block;
+                right: 0;
+                bottom: 0;
+                margin-right: 40px;
+                margin-bottom: 40px;
+                z-index: 900;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+            <header class="demo-header mdl-layout__header header-background">
+                <div class="mdl-layout__header-column header-content"><span class="mdl-layout-title title-size">Film Filter</span>
+                    <div class="mdl-layout-spacer">
+                        <form>
+                            <div class="mdl-textfield mdl-js-textfield">
+                              <input class="mdl-textfield__input" type="text" id="search">
+                              <label class="mdl-textfield__label search-text" for="search">Search Here...</label>
+                              <button type="submit" id="search-button">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </header>
+            <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+                <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+                    <button id="home-button"><a class="mdl-navigation__link" href=""><i class="material-icons"
+                            role="presentation">home</i>Home</a></button>
+                    <button id="display-favorites"><a class="mdl-navigation__link" href=""><i class="material-icons"
+                            role="presentation">favorite</i>Favorites</a></button>
+                </nav>
+            </div>
+            <main class="mdl-layout__content background-content">
+                <div class="mdl-grid demo-content">
+                    <div class="demo-graphs mdl-shadow--2dp background-container mdl-cell mdl-cell--8-col">
+                        <section class="movie-container">
+                        </section>
+                    </div>
+                    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--4-col">
+                        <section class="youtube-container">
+                            <p>Top 5 YouTube Search Results:</p>
+                        </section>
+                    </div>
+                </div>
+                <footer>
+                    <p>Copyright (c) 2023 Michael Lin, Tyler Gosley, and Regan Wilson</p>
+                    <p>Created by: Michael Lin, Tyler Gosley, and Regan Wilson</p>
+                </footer>
+            </main>
+        </div>
+        <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
