@@ -8,7 +8,7 @@
 
 <h2 align="center"> Usage </h2>
 <p align="center"> You can access my project, Film Filter, by simply clicking on this highlighted text. </p>
-<p align="center"> <a href="https://falloutrena.github.io/Film-Filter/assets/index.html#" target="_blank"> Here </a> </p>
+<p align="center"> <a href="" target="_blank"> Here </a> </p>
 
 <h2 align="center"> Screenshots </h2>
 
