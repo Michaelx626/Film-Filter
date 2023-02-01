@@ -101,7 +101,6 @@ function fetchYouTubeData(data){
     youtubeResultsTitle.push(filteredyoutubeTitles);
 
     youtubeContainer.setAttribute('class', 'youtubeResults');
-    youtubeContainer.setAttribute('style', 'background-color:white');
     youtubeLink.setAttribute('href', youtubeIDs[j]);
     youtubeLink.setAttribute('target', '_blank');
   
